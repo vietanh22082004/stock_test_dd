@@ -12,15 +12,19 @@ import {
 } from "recharts";
 import { marketTrendData, sectorPerformance } from "@/data/market-data";
 
-export default function MarketCharts() {
+interface MarketChartsProps {
+  showSectorChart?: boolean;
+}
+
+export default function MarketCharts({ showSectorChart = true }: MarketChartsProps) {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+    <>
       {/* Market Trends Chart */}
       <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 border border-gray-200 dark:border-zinc-800">
         <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
           Chỉ số PK thị trường các sàn chứng khoán Việt Nam
         </h3>
-        <ResponsiveContainer width="100%" height={250}>
+        <ResponsiveContainer width="100%" height={300}>
           <LineChart data={marketTrendData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
             <XAxis
@@ -67,33 +71,35 @@ export default function MarketCharts() {
       </div>
 
       {/* Sector Performance Chart */}
-      <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 border border-gray-200 dark:border-zinc-800">
-        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
-          Xu hướng ngành
-        </h3>
-        <ResponsiveContainer width="100%" height={250}>
-          <BarChart data={sectorPerformance}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis
-              dataKey="sector"
-              tick={{ fill: "#6b7280", fontSize: 11 }}
-              angle={-45}
-              textAnchor="end"
-              height={80}
-            />
-            <YAxis tick={{ fill: "#6b7280", fontSize: 12 }} />
-            <Tooltip
-              contentStyle={{
-                backgroundColor: "#1f2937",
-                border: "1px solid #374151",
-                borderRadius: "4px",
-              }}
-              labelStyle={{ color: "#fff" }}
-            />
-            <Bar dataKey="value" fill="#10b981" name="Thị phần %" />
-          </BarChart>
-        </ResponsiveContainer>
-      </div>
-    </div>
+      {showSectorChart && (
+        <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 border border-gray-200 dark:border-zinc-800 mt-6">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+            Xu hướng ngành
+          </h3>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart data={sectorPerformance}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+              <XAxis
+                dataKey="sector"
+                tick={{ fill: "#6b7280", fontSize: 11 }}
+                angle={-45}
+                textAnchor="end"
+                height={80}
+              />
+              <YAxis tick={{ fill: "#6b7280", fontSize: 12 }} />
+              <Tooltip
+                contentStyle={{
+                  backgroundColor: "#1f2937",
+                  border: "1px solid #374151",
+                  borderRadius: "4px",
+                }}
+                labelStyle={{ color: "#fff" }}
+              />
+              <Bar dataKey="value" fill="#10b981" name="Thị phần %" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      )}
+    </>
   );
 }
