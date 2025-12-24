@@ -59,7 +59,9 @@ export default function TopStocks({
         <div className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 flex flex-col">
           <div className="bg-gradient-to-r from-red-600 to-rose-600 px-6 py-4">
             <h3 className="text-sm font-bold text-white">Top giảm giá</h3>
-            <p className="text-xs text-red-50 mt-1">Mã cổ phiếu giảm nhiều nhất</p>
+            <p className="text-xs text-red-50 mt-1">
+              Mã cổ phiếu giảm nhiều nhất
+            </p>
           </div>
           <div className="divide-y divide-gray-200 dark:divide-zinc-800 flex-1">
             {topLosers.map((stock, index) => (
@@ -102,7 +104,9 @@ export default function TopStocks({
       <div className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800">
         <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-4">
           <h3 className="text-lg font-bold text-white">Top tăng giá</h3>
-          <p className="text-xs text-green-50 mt-1">Mã cổ phiếu tăng nhiều nhất</p>
+          <p className="text-xs text-green-50 mt-1">
+            Mã cổ phiếu tăng nhiều nhất
+          </p>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-zinc-800">
           {topGainers.map((stock, index) => (
@@ -142,7 +146,9 @@ export default function TopStocks({
       <div className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800">
         <div className="bg-gradient-to-r from-red-600 to-rose-600 px-6 py-4">
           <h3 className="text-lg font-bold text-white">Top giảm giá</h3>
-          <p className="text-xs text-red-50 mt-1">Mã cổ phiếu giảm nhiều nhất</p>
+          <p className="text-xs text-red-50 mt-1">
+            Mã cổ phiếu giảm nhiều nhất
+          </p>
         </div>
         <div className="divide-y divide-gray-200 dark:divide-zinc-800">
           {topLosers.map((stock, index) => (

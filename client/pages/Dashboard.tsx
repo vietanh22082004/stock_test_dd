@@ -3,7 +3,7 @@ import { detailedStocks } from "@/data/market-data";
 import { TrendingUp, TrendingDown, ArrowUpDown } from "lucide-react";
 import { useState } from "react";
 
-type SortField = keyof typeof detailedStocks[0];
+type SortField = keyof (typeof detailedStocks)[0];
 type SortOrder = "asc" | "desc";
 
 export default function Dashboard() {
@@ -35,7 +35,13 @@ export default function Dashboard() {
     return sortOrder === "asc" ? aNum - bNum : bNum - aNum;
   });
 
-  const TableHeader = ({ field, label }: { field: SortField; label: string }) => (
+  const TableHeader = ({
+    field,
+    label,
+  }: {
+    field: SortField;
+    label: string;
+  }) => (
     <button
       onClick={() => handleSort(field)}
       className="flex items-center gap-2 font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-zinc-800 px-2 py-1 rounded transition-colors text-sm"
@@ -95,10 +101,16 @@ export default function Dashboard() {
                     <TableHeader field="value" label="Giá trị" />
                   </th>
                   <th className="px-4 py-3 text-right">
-                    <TableHeader field="foreignBuy" label="NĐT nước ngoài mua" />
+                    <TableHeader
+                      field="foreignBuy"
+                      label="NĐT nước ngoài mua"
+                    />
                   </th>
                   <th className="px-4 py-3 text-right">
-                    <TableHeader field="foreignSell" label="NĐT nước ngoài bán" />
+                    <TableHeader
+                      field="foreignSell"
+                      label="NĐT nước ngoài bán"
+                    />
                   </th>
                 </tr>
               </thead>

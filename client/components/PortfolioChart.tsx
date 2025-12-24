@@ -1,4 +1,11 @@
-import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from "recharts";
+import {
+  PieChart,
+  Pie,
+  Cell,
+  Legend,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 import { portfolioDistribution } from "@/data/market-data";
 
 const COLORS = [
@@ -90,9 +97,7 @@ export default function PortfolioChart() {
             </p>
           </div>
           <div className="text-center">
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">
-              ROI
-            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">ROI</p>
             <p className="text-lg font-bold text-green-600 dark:text-green-400">
               +8.2%
             </p>

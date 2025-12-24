@@ -3,11 +3,7 @@ import IndexCards from "@/components/IndexCards";
 import MarketCharts from "@/components/MarketCharts";
 import TopStocks from "@/components/TopStocks";
 import PortfolioChart from "@/components/PortfolioChart";
-import {
-  stockIndices,
-  topGainers,
-  topLosers,
-} from "@/data/market-data";
+import { stockIndices, topGainers, topLosers } from "@/data/market-data";
 
 export default function Index() {
   return (
@@ -66,17 +62,26 @@ export default function Index() {
               </h3>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Giới thiệu
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Tin tức
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Liên hệ
                   </a>
                 </li>
@@ -88,17 +93,26 @@ export default function Index() {
               </h3>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Phân tích
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Tư vấn
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Công cụ
                   </a>
                 </li>
@@ -110,17 +124,26 @@ export default function Index() {
               </h3>
               <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Điều khoản sử dụng
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Chính sách bảo mật
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-gray-900 dark:hover:text-white">
+                  <a
+                    href="#"
+                    className="hover:text-gray-900 dark:hover:text-white"
+                  >
                     Cookies
                   </a>
                 </li>

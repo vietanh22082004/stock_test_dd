@@ -85,19 +85,89 @@ export const stockIndices: StockIndex[] = [
 ];
 
 export const topGainers: TopStock[] = [
-  { id: "1", symbol: "DGW", name: "DGW", price: 0, changePercent: 11.1, volume: 0 },
-  { id: "2", symbol: "FID", name: "FID", price: 0, changePercent: 10.5, volume: 0 },
-  { id: "3", symbol: "RNA", name: "RNA", price: 0, changePercent: 8.82, volume: 0 },
-  { id: "4", symbol: "SHS", name: "SHS", price: 0, changePercent: 8.47, volume: 0 },
-  { id: "5", symbol: "KDM", name: "KDM", price: 0, changePercent: 8.3, volume: 0 },
+  {
+    id: "1",
+    symbol: "DGW",
+    name: "DGW",
+    price: 0,
+    changePercent: 11.1,
+    volume: 0,
+  },
+  {
+    id: "2",
+    symbol: "FID",
+    name: "FID",
+    price: 0,
+    changePercent: 10.5,
+    volume: 0,
+  },
+  {
+    id: "3",
+    symbol: "RNA",
+    name: "RNA",
+    price: 0,
+    changePercent: 8.82,
+    volume: 0,
+  },
+  {
+    id: "4",
+    symbol: "SHS",
+    name: "SHS",
+    price: 0,
+    changePercent: 8.47,
+    volume: 0,
+  },
+  {
+    id: "5",
+    symbol: "KDM",
+    name: "KDM",
+    price: 0,
+    changePercent: 8.3,
+    volume: 0,
+  },
 ];
 
 export const topLosers: TopStock[] = [
-  { id: "1", symbol: "VTF", name: "VTF", price: 0, changePercent: -14.35, volume: 0 },
-  { id: "2", symbol: "VTC", name: "VTC", price: 0, changePercent: -10.68, volume: 0 },
-  { id: "3", symbol: "CTP", name: "CTP", price: 0, changePercent: -9.65, volume: 0 },
-  { id: "4", symbol: "PGV", name: "PGV", price: 0, changePercent: -9.5, volume: 0 },
-  { id: "5", symbol: "HDG", name: "HDG", price: 0, changePercent: -7.65, volume: 0 },
+  {
+    id: "1",
+    symbol: "VTF",
+    name: "VTF",
+    price: 0,
+    changePercent: -14.35,
+    volume: 0,
+  },
+  {
+    id: "2",
+    symbol: "VTC",
+    name: "VTC",
+    price: 0,
+    changePercent: -10.68,
+    volume: 0,
+  },
+  {
+    id: "3",
+    symbol: "CTP",
+    name: "CTP",
+    price: 0,
+    changePercent: -9.65,
+    volume: 0,
+  },
+  {
+    id: "4",
+    symbol: "PGV",
+    name: "PGV",
+    price: 0,
+    changePercent: -9.5,
+    volume: 0,
+  },
+  {
+    id: "5",
+    symbol: "HDG",
+    name: "HDG",
+    price: 0,
+    changePercent: -7.65,
+    volume: 0,
+  },
 ];
 
 export const portfolioDistribution: PortfolioStock[] = [

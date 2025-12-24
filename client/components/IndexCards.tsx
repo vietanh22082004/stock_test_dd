@@ -31,7 +31,9 @@ export default function IndexCards({ indices }: IndexCardsProps) {
                 points="0,20 10,15 20,18 30,10 40,12 50,8"
                 stroke="currentColor"
                 strokeWidth="1.5"
-                className={index.changePercent >= 0 ? "text-green-500" : "text-red-500"}
+                className={
+                  index.changePercent >= 0 ? "text-green-500" : "text-red-500"
+                }
                 fill="none"
               />
             </svg>
