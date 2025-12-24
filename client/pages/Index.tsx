@@ -49,9 +49,7 @@ export default function Index() {
 
         {/* Sector Performance Chart */}
         <section className="mb-8">
-          <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 border border-gray-200 dark:border-zinc-800">
-            <MarketCharts showSectorChart={true} />
-          </div>
+          <MarketCharts showSectorChart={true} />
         </section>
 
         {/* Portfolio Chart Section */}
