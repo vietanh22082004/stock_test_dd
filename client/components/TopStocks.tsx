@@ -4,9 +4,98 @@ import { TrendingUp, TrendingDown } from "lucide-react";
 interface TopStocksProps {
   topGainers: TopStock[];
   topLosers: TopStock[];
+  layout?: "grid" | "stacked";
 }
 
-export default function TopStocks({ topGainers, topLosers }: TopStocksProps) {
+export default function TopStocks({
+  topGainers,
+  topLosers,
+  layout = "stacked",
+}: TopStocksProps) {
+  if (layout === "stacked") {
+    // Sidebar layout - stacked vertically
+    return (
+      <div className="flex flex-col gap-6 h-full">
+        {/* Top Gainers */}
+        <div className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 flex flex-col">
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-4">
+            <h3 className="text-sm font-bold text-white">Top tăng giá</h3>
+            <p className="text-xs text-green-50 mt-1">
+              Mã cổ phiếu tăng nhiều nhất
+            </p>
+          </div>
+          <div className="divide-y divide-gray-200 dark:divide-zinc-800 flex-1">
+            {topGainers.map((stock, index) => (
+              <div
+                key={stock.id}
+                className="px-4 py-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition-colors text-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-green-100 dark:bg-green-950">
+                      <TrendingUp className="w-3 h-3 text-green-600 dark:text-green-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-white text-xs">
+                        {stock.symbol}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs font-bold text-green-600 dark:text-green-400">
+                      +{stock.changePercent.toFixed(2)}%
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      #{index + 1}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Top Losers */}
+        <div className="bg-white dark:bg-zinc-900 rounded-lg overflow-hidden border border-gray-200 dark:border-zinc-800 flex flex-col">
+          <div className="bg-gradient-to-r from-red-600 to-rose-600 px-6 py-4">
+            <h3 className="text-sm font-bold text-white">Top giảm giá</h3>
+            <p className="text-xs text-red-50 mt-1">Mã cổ phiếu giảm nhiều nhất</p>
+          </div>
+          <div className="divide-y divide-gray-200 dark:divide-zinc-800 flex-1">
+            {topLosers.map((stock, index) => (
+              <div
+                key={stock.id}
+                className="px-4 py-3 hover:bg-gray-50 dark:hover:bg-zinc-800/50 transition-colors text-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-center w-6 h-6 rounded-full bg-red-100 dark:bg-red-950">
+                      <TrendingDown className="w-3 h-3 text-red-600 dark:text-red-400" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 dark:text-white text-xs">
+                        {stock.symbol}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs font-bold text-red-600 dark:text-red-400">
+                      {stock.changePercent.toFixed(2)}%
+                    </p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">
+                      #{index + 1}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Grid layout - 2 columns (default)
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       {/* Top Gainers */}
