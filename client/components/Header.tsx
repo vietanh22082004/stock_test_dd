@@ -33,7 +33,7 @@ export default function Header() {
               Thị trường
             </Link>
             <Link
-              to="/"
+              to="/dashboard"
               className="px-4 py-2 text-white hover:bg-zinc-800 rounded-md transition-colors text-sm font-medium"
             >
               Bảng điều
