@@ -24,6 +24,23 @@ export interface PortfolioStock {
   amount: number;
 }
 
+export interface DetailedStock {
+  id: string;
+  symbol: string;
+  price: number;
+  change: number;
+  changePercent: number;
+  open: number;
+  high: number;
+  low: number;
+  volume: number;
+  value: number;
+  average: number;
+  foreignBuy: number;
+  foreignSell: number;
+  priceBoard: string;
+}
+
 export const stockIndices: StockIndex[] = [
   {
     id: "vn-index",
