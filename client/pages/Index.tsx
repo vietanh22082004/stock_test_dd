@@ -40,9 +40,11 @@ export default function Index() {
           </div>
 
           {/* Top Gainers and Losers - Takes 1 column */}
-          <div className="flex flex-col gap-6">
-            <TopStocks topGainers={topGainers} topLosers={topLosers} />
-          </div>
+          <TopStocks
+            topGainers={topGainers}
+            topLosers={topLosers}
+            layout="stacked"
+          />
         </section>
 
         {/* Sector Performance Chart */}
