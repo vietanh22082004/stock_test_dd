@@ -32,14 +32,24 @@ export default function Index() {
           <IndexCards indices={stockIndices} />
         </section>
 
-        {/* Charts Section */}
-        <section>
-          <MarketCharts />
+        {/* Charts and Top Stocks Combined Section */}
+        <section className="mb-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Main Chart - Takes 2 columns */}
+          <div className="lg:col-span-2">
+            <MarketCharts showSectorChart={false} />
+          </div>
+
+          {/* Top Gainers and Losers - Takes 1 column */}
+          <div className="flex flex-col gap-6">
+            <TopStocks topGainers={topGainers} topLosers={topLosers} />
+          </div>
         </section>
 
-        {/* Top Gainers and Losers Section */}
-        <section>
-          <TopStocks topGainers={topGainers} topLosers={topLosers} />
+        {/* Sector Performance Chart */}
+        <section className="mb-8">
+          <div className="bg-white dark:bg-zinc-900 rounded-lg p-6 border border-gray-200 dark:border-zinc-800">
+            <MarketCharts showSectorChart={true} />
+          </div>
         </section>
 
         {/* Portfolio Chart Section */}
